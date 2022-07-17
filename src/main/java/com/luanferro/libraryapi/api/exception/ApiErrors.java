@@ -1,4 +1,4 @@
-package com.luanferro.libraryapi.api.exceptions;
+package com.luanferro.libraryapi.api.exception;
 
 import com.luanferro.libraryapi.exception.BusinessException;
 import org.springframework.validation.BindingResult;
