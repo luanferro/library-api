@@ -2,6 +2,7 @@ package com.luanferro.libraryapi.api.resource;
 
 
 import com.luanferro.libraryapi.api.dto.LoanDTO;
+import com.luanferro.libraryapi.api.dto.ReturnedLoanDTO;
 import com.luanferro.libraryapi.model.entity.Book;
 import com.luanferro.libraryapi.model.entity.Loan;
 import com.luanferro.libraryapi.service.BookService;
@@ -36,5 +37,13 @@ public class LoanController {
         entity = service.save(entity);
 
         return entity.getId();
+    }
+
+    @PatchMapping("{id}")
+    public void returnBook(@PathVariable Long id, @RequestBody ReturnedLoanDTO dto) {
+
+        Loan loan  = service.getById(id).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND) );
+        loan.setReturned(dto.getReturned());
+        service.update(loan);
     }
 }
