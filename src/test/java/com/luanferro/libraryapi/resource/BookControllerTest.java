@@ -2,6 +2,7 @@ package com.luanferro.libraryapi.resource;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.luanferro.libraryapi.api.dto.BookDTO;
+import com.luanferro.libraryapi.api.resource.BookController;
 import com.luanferro.libraryapi.exception.BusinessException;
 import com.luanferro.libraryapi.model.entity.Book;
 import com.luanferro.libraryapi.service.BookService;
@@ -34,7 +35,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
-@WebMvcTest
+@WebMvcTest(controllers = BookController.class)
 @AutoConfigureMockMvc
 public class BookControllerTest {
 
