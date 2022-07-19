@@ -1,12 +1,12 @@
 package com.luanferro.libraryapi.service;
 
 import com.luanferro.libraryapi.api.dto.LoanFilterDTO;
+import com.luanferro.libraryapi.model.entity.Book;
 import com.luanferro.libraryapi.model.entity.Loan;
-import jdk.nashorn.internal.objects.AccessorPropertyDescriptor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import javax.swing.text.html.Option;
+import java.util.List;
 import java.util.Optional;
 
 public interface LoanService {
@@ -17,4 +17,8 @@ public interface LoanService {
     Loan update(Loan loan);
 
     Page<Loan> find(LoanFilterDTO filter, Pageable pageable);
+
+    Page<Loan> getLoansByBook(Book book, Pageable pageable);
+
+    List<Loan> getAllLateLoans();
 }

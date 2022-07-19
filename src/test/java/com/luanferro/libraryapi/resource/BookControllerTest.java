@@ -6,6 +6,7 @@ import com.luanferro.libraryapi.api.resource.BookController;
 import com.luanferro.libraryapi.exception.BusinessException;
 import com.luanferro.libraryapi.model.entity.Book;
 import com.luanferro.libraryapi.service.BookService;
+import com.luanferro.libraryapi.service.LoanService;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -46,6 +47,9 @@ public class BookControllerTest {
 
     @MockBean
     BookService service;
+
+    @MockBean
+    LoanService loanService;
 
     @Test
     @DisplayName("Deve criar um livro com sucesso")
