@@ -11,7 +11,6 @@ import com.luanferro.libraryapi.service.BookService;
 import com.luanferro.libraryapi.service.LoanService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Required;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
@@ -26,6 +25,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/loans")
+
 public class LoanController {
 
     private  LoanService service;
